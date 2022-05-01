@@ -1,0 +1,20 @@
+\documentclass[crop,tikz]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+\usepackage{graphics}
+\usepackage[style=phys, citestyle=alphabetic-verb]{biblatex}
+\usepackage{colortbl}
+%\usepackage{euler}
+
+
+\usetikzlibrary{timeline}
+
+\begin{document}
+\begin{tikzpicture}[timespan={}]
+
+    \timeline[custom interval=true]{\bfseries 2021-2022, \bfseries 2022-2023, \bfseries 2023-2024}
+
+
+    \end{tikzpicture}
+\end{document}

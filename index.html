@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<div>
+						<img src="figures/CEA.jpg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</div>
+						<h4>Madgraph generation and QT status – UPDATE</h4>
+						<div style="height: 8px;
+						width: 100%;
+						border-radius: 25px;
+						margin-bottom: 25px;
+						background-color: red;
+						border-bottom: 2px solid black;"></div>
+						<div style="margin: 0 auto 0 auto;">
+							<ul>
+								<li>MadGraph generations for CP
+									odd&even study (6)</li>
+								<li>QT first results</li>
+					
+							</ul>
+						</div>
+						<div style="margin-top: 85px;">
+							<img src="figures/upsaclay-2020.jpg" alt="reveal.js logo" style="height: 90px; margin: 0 auto 3.5rem auto; background: transparent;" class="demo-logo">
+							<img src="figures/atlas.jpg" alt="reveal.js logo" style="height: 100px; margin: 0 70px 2.75rem 40px; background: transparent;" class="demo-logo">
+							<img src="figures/Irfu_CEA_Saclay_Quadri.jpg" alt="reveal.js logo" style="height: 60px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+						</div>
+				</section>
+				<section style="font-size: 30px;">
+					<h2>Status on generation</h2>
+					<ul>
+						<li>Focus on analysing the last generation $H\to\tau^+\tau^-,\;H\to W^+W^-$</li>
+						<li>The normalization used for the sample is now fixed.</li>
+						<li>Check on cuts and selection underway, doubt on the offline trigger $p_T$ cuts</li>
+						<li>Current results:</li>
+					</ul>
+					<table>
+						<tr>
+							<td>Channel</td>
+							<td>ONt. 80 $fb^{-1}$</td>
+							<td>NNt. 80 $fb^{-1}$</td>
+							<td>NNt. 139 $fb^{-1}$</td>
+							<td>Gn. 139 $fb^{-1}$</td>
+						</tr>
+						
+						<tr>
+							<td>$3\ell$</td>
+							<td>$50.713$</td>
+							<td>$53.044$</td>
+							<td>$91.857$</td>
+							<td>$\sim 76$</td>
+						</tr>
+						<tr>
+							<td>$2\ell$SS</td>
+							<td>$94.984$</td>
+							<td>$105.436$</td>
+							<td>$181.457$</td>
+							<td>$\sim 170$</td>
+						</tr>
+					</table> 
+				  	
+				</section>
+
+				<section data-auto-animate style="font-size: 30px;">
+					<h2 data-id="code-title">offline trigger $p_T$</h2>
+					<pre data-id="code-animation" style="width:1500px; left:-260px"><code class="c++" data-trim data-line-numbers="|2-5|6-9|10|12-24"><script type="text/template">
+						bool passTrigger=false;
+						if(abs(idLep1)==13 && abs(idLep2)==13)//if mu mu
+						{
+							passTrigger=m_lep1_vector.first.Pt()>25 && m_lep2_vector.first.Pt()>10;
+						}
+						if(abs(idLep1)==11 && abs(idLep2)==11)//if e e
+						{
+							passTrigger=m_lep1_vector.first.Pt()>25 && m_lep2_vector.first.Pt()>25;
+						}
+						if(abs(idLep1)==11 && abs(idLep2)==13 || abs(idLep1)==13 && abs(idLep2)==11)//if e mu or mu e
+						{
+							bool passElectronTrigger=false;
+							bool passMuonTrigger=false;
+							if(abs(idLep1)==11 && abs(idLep2)==13)
+							{
+								passElectronTrigger=m_lep1_vector.first.Pt()>20;
+								passMuonTrigger=m_lep2_vector.first.Pt()>15;
+							}
+							if(abs(idLep1)==13 && abs(idLep2)==11)
+							{
+								passElectronTrigger=m_lep2_vector.first.Pt()>20;
+								passMuonTrigger=m_lep1_vector.first.Pt()>15;
+							}
+							passTrigger=passElectronTrigger && passMuonTrigger;
+						}
+					</script></code></pre>
+				</section>
+
+				 <section data-background-iframe="https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageBR" data-background-interactive><!--data-background-interactive -->
+					<div style="position: absolute; width: 40%; right: 0; bottom: 70px; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<h2 style="color: #fff">TO DO</h2>
+						<p>Could be nice to interact with the original page directly.</p>
+					</div>
+				</section>
+			</div>
+			<script src="dist/reveal.js"></script>
+			<script src="plugin/zoom/zoom.js"></script>
+			<script src="plugin/notes/notes.js"></script>
+			<script src="plugin/search/search.js"></script>
+			<script src="plugin/markdown/markdown.js"></script>
+			<script src="plugin/highlight/highlight.js"></script>
+			<script src="plugin/math/math.js"></script>
+			<script>
+	
+				// Also available as an ES module, see:
+				// https://revealjs.com/initialization/
+				Reveal.initialize({
+					controls: true,
+					progress: true,
+					center: true,
+					hash: true,
+	
+					// Learn about plugins: https://revealjs.com/plugins/
+					plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+				});
+	
+			</script>
+	</body>
+</html>

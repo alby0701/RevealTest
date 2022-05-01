@@ -1,0 +1,49 @@
+\documentclass[crop,tikz]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+\usepackage{graphics}
+\usepackage[style=phys, citestyle=alphabetic-verb]{biblatex}
+\usepackage{colortbl}
+%\usepackage{euler}
+
+
+\usetikzlibrary{timeline}
+
+\begin{document}
+\begin{tikzpicture}[timespan={}]
+
+    \timeline[custom interval=true]{\bfseries 2021-2022, \bfseries 2022-2023, \bfseries 2023-2024}
+
+    \begin{phases}
+
+            %A 2014
+            \phase{between week=1 and 3 in 0.3,involvement degree=4.25cm, phase color=blue!80!cyan}
+            %C 2014
+            \phase{between week=1 and 2 in -0.1,involvement degree=4.25cm}
+            %R 2014
+            \phase{between week=1 and 2 in 1.0,involvement degree=4.25cm, phase color=green!50!black}
+
+
+            \phase{between week=1 and 2 in 2.0,involvement degree=4.25cm,phase color=yellow!80!cyan}
+
+
+
+      
+    \end{phases}
+    %2014
+            \addmilestone{at=phase-1.90,direction=90:0.5cm,text={Final state recostruction},text options={above}}
+     
+            
+            \addmilestone{at=phase-2.110,direction=120:0.5cm,text={Qualification task},text options={above}}
+   
+
+            \addmilestone{at=phase-3.60,direction=60:0.5cm,text={Signal extimation},text options={above}}
+   
+            \addmilestone{at=phase-4.90,direction=90:0.5cm,text={Writing},text options={above}}
+   
+  
+
+
+    \end{tikzpicture}
+\end{document}
