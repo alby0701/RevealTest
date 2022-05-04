@@ -41,10 +41,8 @@
 						border-bottom: 2px solid black;"></div>
 						<div style="margin: 0 auto 0 auto;">
 							<ul>
-								<li>MadGraph generations for CP
-									odd&even study (6)</li>
-								<li>QT first results</li>
-					
+								<li>MadGraph generations for CP odd&even study (6)</li>
+								<!-- <li>QT status</li> -->
 							</ul>
 						</div>
 						<div style="margin-top: 85px;">
@@ -52,79 +50,211 @@
 							<img src="figures/atlas.jpg" alt="reveal.js logo" style="height: 100px; margin: 0 70px 2.75rem 40px; background: transparent;" class="demo-logo">
 							<img src="figures/Irfu_CEA_Saclay_Quadri.jpg" alt="reveal.js logo" style="height: 60px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
 						</div>
+						<p style="font-size: 18px;">05 - 05 - 2021</p>
+				</section>
+				<section>
+					<section style="font-size: 30px;" id="fragments">
+						<h2>Status on generation</h2>
+						<ul>
+							<li>Focus on analysing the last generation $H\to\tau^+\tau^-,\;H\to W^+W^-$</li>
+							<li>The normalization used for the sample is now fixed.</li>
+							<li>Check on cuts and selection underway, doubt on the offline trigger $p_T$ cuts and object definition</li>
+						</ul>
+							<div class="r-stack">
+								<p class="fragment fade-out" data-fragment-index="1">Current results:</p>
+								<p class="fragment fade-out current-visible" data-fragment-index="1">Cuts now applied $2\ell SS$:</p>
+								<p class="fragment fade-out current-visible" data-fragment-index="2">Cuts now applied $3\ell$:</p>
+							</div>
+						
+						<div class="r-stack">
+						<table class="fragment fade-out" data-fragment-index="1">
+							<tr>
+								<td>Channel</td>
+								<td>ONt. 80 $fb^{-1}$</td>
+								<td>NNt. 80 $fb^{-1}$</td>
+								<td>NNt. 139 $fb^{-1}$</td>
+								<td>Gn. 139 $fb^{-1}$</td>
+							</tr>
+							
+							<tr>
+								<td>$3\ell$</td>
+								<td>$50.713$</td>
+								<td>$53.044$</td>
+								<td>$91.857$</td>
+								<td>$\sim 63$</td>
+							</tr>
+							<tr>
+								<td>$2\ell$SS</td>
+								<td>$94.984$</td>
+								<td>$105.436$</td>
+								<td>$181.457$</td>
+								<td>$\sim 174$</td>
+							</tr>
+						</table>
+						<ul class="fragment fade-out current-visible" data-fragment-index="1">
+							<li>At least 1 Bjets</li>
+							<li>At least 2 High energetic Jets</li>
+							<li>Leptons pt above 20 GeV</li>
+							<li>Two lepton event</li>
+							<li>Same sign leptons</li>
+						</ul>
+						<ul class="fragment fade-out current-visible" data-fragment-index="2">
+							<li>Three lepton event,</li>
+							<li>No Tau hadronic decays,</li>
+							<li>Selected Jet pt above 25 GeV,</li>
+							<li>At least 2 jets.</li>
+							<li>At least one lepton couple</li>
+							<li>Leptons pt above 15 GeV</li>
+						</ul>
+					</div>
+						</section> 
+							<section id="fragments">
+							<h2>Fragments</h2>
+							<p>Hit the next arrow...</p>
+							<p class="fragment">... to step through ...</p>
+							<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+	
+							<aside class="notes">
+								This slide has fragments which are also stepped through in the notes window.
+							</aside>
+						</section>
+						<section>
+							<h2>Fragment Styles</h2>
+							<p>There's different types of fragments, like:</p>
+							<p class="fragment grow">grow</p>
+							<p class="fragment shrink">shrink</p>
+							<p class="fragment fade-out">fade-out</p>
+							<p>
+								<span style="display: inline-block;" class="fragment fade-right">fade-right, </span>
+								<span style="display: inline-block;" class="fragment fade-up">up, </span>
+								<span style="display: inline-block;" class="fragment fade-down">down, </span>
+								<span style="display: inline-block;" class="fragment fade-left">left</span>
+							</p>
+							<p class="fragment fade-in-then-out">fade-in-then-out</p>
+							<p class="fragment fade-in-then-semi-out">fade-in-then-semi-out</p>
+							<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+						</section>
+					</section>
+				</section>
+				<section>
+					<section data-auto-animate style="font-size: 30px;" id="fragments"> 
+						<h2 data-id="code-title">To be linked to a reference</h2>
+						<p>Offline Trigger</p>
+						<pre data-id="code-animation" style="width:1000px; left:-30px"><code class="c++" data-trim data-line-numbers="|2-5|6-9|10|12-24"><script type="text/template">
+							bool passTrigger=false;
+							if(abs(idLep1)==13 && abs(idLep2)==13)//if mu mu
+							{
+								passTrigger=m_lep1_vector.first.Pt()>25 && m_lep2_vector.first.Pt()>10;
+							}
+							if(abs(idLep1)==11 && abs(idLep2)==11)//if e e
+							{
+								passTrigger=m_lep1_vector.first.Pt()>25 && m_lep2_vector.first.Pt()>25;
+							}
+							if(abs(idLep1)==11 && abs(idLep2)==13 || abs(idLep1)==13 && abs(idLep2)==11)//if e mu or mu e
+							{
+								bool passElectronTrigger=false;
+								bool passMuonTrigger=false;
+								if(abs(idLep1)==11 && abs(idLep2)==13)
+								{
+									passElectronTrigger=m_lep1_vector.first.Pt()>20;
+									passMuonTrigger=m_lep2_vector.first.Pt()>15;
+								}
+								if(abs(idLep1)==13 && abs(idLep2)==11)
+								{
+									passElectronTrigger=m_lep2_vector.first.Pt()>20;
+									passMuonTrigger=m_lep1_vector.first.Pt()>15;
+								}
+								passTrigger=passElectronTrigger && passMuonTrigger;
+							}
+						</script></code></pre>
+					</section>
+					<section data-auto-animate style="font-size: 30px;" id="fragments"> 
+						<h2 data-id="code-title">To be linked to a reference</h2>
+						<p>Object definition <spam style="color:red">WIP</spam></p>
+						<pre data-id="code-animation" style="width:1000px; left:-30px"><code class="c++"><script type="text/template">
+							InitializePhotons();
+							InitializeLeptons();
+							InitializeJets();
+							InitializeCPAnalysis();
+						</script></code></pre>
+					</section>
 				</section>
 				<section style="font-size: 30px;">
-					<h2>Status on generation</h2>
-					<ul>
-						<li>Focus on analysing the last generation $H\to\tau^+\tau^-,\;H\to W^+W^-$</li>
-						<li>The normalization used for the sample is now fixed.</li>
-						<li>Check on cuts and selection underway, doubt on the offline trigger $p_T$ cuts</li>
-						<li>Current results:</li>
-					</ul>
-					<table>
-						<tr>
-							<td>Channel</td>
-							<td>ONt. 80 $fb^{-1}$</td>
-							<td>NNt. 80 $fb^{-1}$</td>
-							<td>NNt. 139 $fb^{-1}$</td>
-							<td>Gn. 139 $fb^{-1}$</td>
-						</tr>
+						<h2>Current results from cutflows</h2>
+						<p>$2\ell SS$:</p>
 						
-						<tr>
-							<td>$3\ell$</td>
-							<td>$50.713$</td>
-							<td>$53.044$</td>
-							<td>$91.857$</td>
-							<td>$\sim 76$</td>
-						</tr>
-						<tr>
-							<td>$2\ell$SS</td>
-							<td>$94.984$</td>
-							<td>$105.436$</td>
-							<td>$181.457$</td>
-							<td>$\sim 170$</td>
-						</tr>
-					</table> 
-				  	
-				</section>
+						<table style="font-size: 20px;">
+							<tr>
+								<td>Cuts</td>
+								<td>All</td>
+								<td>PassTrigger</td>
+								<td>OneBJet</td>
+								<td>TwoHighPtJet</td>
+								<td>2LSSCheck</td>
+								<td>2TightLepton</td>
+								<td>NoHadronDecay</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>$13415$</td>
+								<td>$1014$</td>
+								<td>$854$</td>
+								<td>$854$</td>
+								<td>$297$</td>
+								<td>$216$</td>
+								<td>$174$</td>
+							</tr>
+						</table>
+						<p>$3\ell$:</p>
 
-				<section data-auto-animate style="font-size: 30px;">
-					<h2 data-id="code-title">offline trigger $p_T$</h2>
-					<pre data-id="code-animation" style="width:1500px; left:-260px"><code class="c++" data-trim data-line-numbers="|2-5|6-9|10|12-24"><script type="text/template">
-						bool passTrigger=false;
-						if(abs(idLep1)==13 && abs(idLep2)==13)//if mu mu
-						{
-							passTrigger=m_lep1_vector.first.Pt()>25 && m_lep2_vector.first.Pt()>10;
-						}
-						if(abs(idLep1)==11 && abs(idLep2)==11)//if e e
-						{
-							passTrigger=m_lep1_vector.first.Pt()>25 && m_lep2_vector.first.Pt()>25;
-						}
-						if(abs(idLep1)==11 && abs(idLep2)==13 || abs(idLep1)==13 && abs(idLep2)==11)//if e mu or mu e
-						{
-							bool passElectronTrigger=false;
-							bool passMuonTrigger=false;
-							if(abs(idLep1)==11 && abs(idLep2)==13)
-							{
-								passElectronTrigger=m_lep1_vector.first.Pt()>20;
-								passMuonTrigger=m_lep2_vector.first.Pt()>15;
-							}
-							if(abs(idLep1)==13 && abs(idLep2)==11)
-							{
-								passElectronTrigger=m_lep2_vector.first.Pt()>20;
-								passMuonTrigger=m_lep1_vector.first.Pt()>15;
-							}
-							passTrigger=passElectronTrigger && passMuonTrigger;
-						}
-					</script></code></pre>
+						<table style="font-size: 20px;">
+							<tr>
+								<td>Cuts</td>
+								<td>All</td>
+								<td>PassTrigger</td>
+								<td>OneBJet</td>
+								<td>TwoHighPtJet</td>
+								<td>ThreeLeptons</td>
+								<td>checkOpposSigns</td>
+								<td>NoHadronDecay</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>$13415$</td>
+								<td>$1014$</td>
+								<td>$854$</td>
+								<td>$854$</td>
+								<td>$75$</td>
+								<td>$73$</td>
+								<td>$63$</td>
+							</tr>
+						</table>
 				</section>
+				<section>
+					<div style="height: 8px;
+					width: 100%;
+					border-radius: 25px;
+					margin-bottom: 25px;
+					background-color: red;
+					border-bottom: 2px solid black;"></div>
+					<p>Thanks for your attention!</p>
+					<div style="margin-bottom:30px">
+						<a href="https://revealjs.com/" >Framework description here!  </a>
+					</div>
+					<div style="height: 8px;
+					width: 100%;
+					border-radius: 25px;
+					margin-bottom: 25px;
+					background-color: red;
+					border-bottom: 2px solid black;"></div>
 
-				 <section data-background-iframe="https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageBR" data-background-interactive><!--data-background-interactive -->
+				</section>
+				 <!-- <section data-background-iframe="https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageBR" data-background-interactive>
 					<div style="position: absolute; width: 40%; right: 0; bottom: 70px; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<h2 style="color: #fff">TO DO</h2>
 						<p>Could be nice to interact with the original page directly.</p>
 					</div>
-				</section>
+				</section> -->
 			</div>
 			<script src="dist/reveal.js"></script>
 			<script src="plugin/zoom/zoom.js"></script>
