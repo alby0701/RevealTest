@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<div>
+						<img src="figures/CEA.jpg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</div>
+						<h4>QT current status and issues</h4>
+						<div style="height: 8px;
+						width: 100%;
+						border-radius: 25px;
+						margin-bottom: 25px;
+						background-color: red;
+						border-bottom: 2px solid black;"></div>
+						<div style="margin: 0 auto 0 auto;">
+							<ul>
+								<li>Samples status<span class="fragment fade-in"> $\to$ issues</span></li>
+								<li>Training status<span class="fragment fade-in"> $\to$ issues</span></li>
+								<li>SF study<span class="fragment fade-in"> $\to$ issues</span></li>
+								<!-- <li>QT status</li> -->
+							</ul>
+						</div>
+						<div style="margin-top: 15px;">
+							<img src="figures/upsaclay-2020.jpg" alt="reveal.js logo" style="height: 90px; margin: 0 auto 3.5rem auto; background: transparent;" class="demo-logo">
+							<img src="figures/atlas.jpg" alt="reveal.js logo" style="height: 100px; margin: 0 70px 2.75rem 40px; background: transparent;" class="demo-logo">
+							<img src="figures/Irfu_CEA_Saclay_Quadri.jpg" alt="reveal.js logo" style="height: 60px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+						</div>
+						<p style="font-size: 18px; margin-top: -50px;">11 - 05 - 2021</p>
+				</section>
+				<section style="font-size: 30px;">
+					<h2>Samples status</h2>
+					<ul>
+						<li>Currently we have a $Z\to e^+ e^-,$ sample, and a $t\bar{t}$ sample with the new variable included.</li>
+						<li>The ID DNN training was done on a series of samples $Z\to e^+ e^-,J/\psi\to e^+ e^-, t\bar{t}, JF17$ </li>
+						<li>It will be impossible to reproduce the same results, our training on the ID will be partial.</li>
+						<li>Possible to compare the sample we are using with the subsample Lukas was using for test, composed by $Z\to e^+ e^-, JF17$</li>
+					</ul>
+
+				</section>
+				<section style="font-size: 30px;">
+					<h2>Training status</h2>
+					<ul>
+						<li>Currently we have a result for the training without the inclusion of the new variable.</li>
+						<li>The result are promising and some plots for the ID seems to show that the result are ok.</li>
+						<li>Plotting using old code is not immediate, still need some time to adjust all.</li>
+						<li>Perhaps useful to start a training with also the new variable as the setup will remain unchange</li>
+					</ul>
+
+				</section>
+				<section style="font-size: 30px;">
+					<h2>SF study $\to$ PERSONAL OPINION</h2>
+					<ul>
+						<li>The SF evaluation is effectively part of the QT sum up $\to$ for me is fine to proceed!</li>
+						<li>DNN use seems not a priority for CF right now, perhaps never will, do not want to start an issue.</li>
+						<li style="color:red">In case we move on SF evaluation the DNN retrain will immediately stop.</li>
+						<li style="color:red">After SF evaluation, if we agree on that I want to ask for the immediate conclusion.</li>
+					</ul>
+
+				</section>
+				<section>
+					<section data-auto-animate style="font-size: 30px;" id="fragments"> 
+						<h2 data-id="code-title">To be linked to a reference</h2>
+						<p>Offline Trigger</p>
+						<pre data-id="code-animation" style="width:1000px; left:-30px"><code class="c++" data-trim data-line-numbers="|2-5|6-9|10|12-24"><script type="text/template">
+							bool passTrigger=false;
+							if(abs(idLep1)==13 && abs(idLep2)==13)//if mu mu
+							{
+								passTrigger=m_lep1_vector.first.Pt()>25 && m_lep2_vector.first.Pt()>10;
+							}
+							if(abs(idLep1)==11 && abs(idLep2)==11)//if e e
+							{
+								passTrigger=m_lep1_vector.first.Pt()>25 && m_lep2_vector.first.Pt()>25;
+							}
+							if(abs(idLep1)==11 && abs(idLep2)==13 || abs(idLep1)==13 && abs(idLep2)==11)//if e mu or mu e
+							{
+								bool passElectronTrigger=false;
+								bool passMuonTrigger=false;
+								if(abs(idLep1)==11 && abs(idLep2)==13)
+								{
+									passElectronTrigger=m_lep1_vector.first.Pt()>20;
+									passMuonTrigger=m_lep2_vector.first.Pt()>15;
+								}
+								if(abs(idLep1)==13 && abs(idLep2)==11)
+								{
+									passElectronTrigger=m_lep2_vector.first.Pt()>20;
+									passMuonTrigger=m_lep1_vector.first.Pt()>15;
+								}
+								passTrigger=passElectronTrigger && passMuonTrigger;
+							}
+						</script></code></pre>
+					</section>
+					<section data-auto-animate style="font-size: 30px;" id="fragments"> 
+						<h2 data-id="code-title">To be linked to a reference</h2>
+						<p>Object definition <spam style="color:red">WIP</spam></p>
+						<pre data-id="code-animation" style="width:1000px; left:-30px"><code class="c++"><script type="text/template">
+							InitializePhotons();
+							InitializeLeptons();
+							InitializeJets();
+							InitializeCPAnalysis();
+						</script></code></pre>
+					</section>
+				</section>
+				<section style="font-size: 30px;">
+						<h2>Current results from cutflows</h2>
+						<p>$2\ell SS$:</p>
+						
+						<table style="font-size: 20px;">
+							<tr>
+								<td>Cuts</td>
+								<td>All</td>
+								<td>PassTrigger</td>
+								<td>OneBJet</td>
+								<td>TwoHighPtJet</td>
+								<td>2LSSCheck</td>
+								<td>2TightLepton</td>
+								<td>NoHadronDecay</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>$13415$</td>
+								<td>$1014$</td>
+								<td>$854$</td>
+								<td>$854$</td>
+								<td>$297$</td>
+								<td>$216$</td>
+								<td>$174$</td>
+							</tr>
+						</table>
+						<p>$3\ell$:</p>
+
+						<table style="font-size: 20px;">
+							<tr>
+								<td>Cuts</td>
+								<td>All</td>
+								<td>PassTrigger</td>
+								<td>OneBJet</td>
+								<td>TwoHighPtJet</td>
+								<td>ThreeLeptons</td>
+								<td>checkOpposSigns</td>
+								<td>NoHadronDecay</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>$13415$</td>
+								<td>$1014$</td>
+								<td>$854$</td>
+								<td>$854$</td>
+								<td>$75$</td>
+								<td>$73$</td>
+								<td>$63$</td>
+							</tr>
+						</table>
+				</section>
+				<section>
+					<div style="height: 8px;
+					width: 100%;
+					border-radius: 25px;
+					margin-bottom: 25px;
+					background-color: red;
+					border-bottom: 2px solid black;"></div>
+					<p>Thanks for your attention!</p>
+					<div style="margin-bottom:30px">
+						<a href="https://revealjs.com/" >Framework description here!  </a>
+					</div>
+					<div style="height: 8px;
+					width: 100%;
+					border-radius: 25px;
+					margin-bottom: 25px;
+					background-color: red;
+					border-bottom: 2px solid black;"></div>
+
+				</section>
+				 <!-- <section data-background-iframe="https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageBR" data-background-interactive>
+					<div style="position: absolute; width: 40%; right: 0; bottom: 70px; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<h2 style="color: #fff">TO DO</h2>
+						<p>Could be nice to interact with the original page directly.</p>
+					</div>
+				</section> -->
+			</div>
+			<script src="dist/reveal.js"></script>
+			<script src="plugin/zoom/zoom.js"></script>
+			<script src="plugin/notes/notes.js"></script>
+			<script src="plugin/search/search.js"></script>
+			<script src="plugin/markdown/markdown.js"></script>
+			<script src="plugin/highlight/highlight.js"></script>
+			<script src="plugin/math/math.js"></script>
+			<script>
+	
+				// Also available as an ES module, see:
+				// https://revealjs.com/initialization/
+				Reveal.initialize({
+					controls: true,
+					progress: true,
+					center: true,
+					hash: true,
+	
+					// Learn about plugins: https://revealjs.com/plugins/
+					plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+				});
+	
+			</script>
+	</body>
+</html>
