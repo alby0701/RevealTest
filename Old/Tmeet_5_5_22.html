@@ -52,37 +52,91 @@
 							<img src="figures/atlas.jpg" alt="reveal.js logo" style="height: 100px; margin: 0 70px 2.75rem 40px; background: transparent;" class="demo-logo">
 							<img src="figures/Irfu_CEA_Saclay_Quadri.jpg" alt="reveal.js logo" style="height: 60px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
 						</div>
-						<p style="font-size: 18px; margin-top: -50px;">11 - 05 - 2021</p>
+						<p style="font-size: 18px; margin-top: -50px;">05 - 05 - 2021</p>
 				</section>
-				<section style="font-size: 30px;">
-					<h2>Samples status</h2>
-					<ul>
-						<li>Currently we have a $Z\to e^+ e^-,$ sample, and a $t\bar{t}$ sample with the new variable included.</li>
-						<li>The ID DNN training was done on a series of samples $Z\to e^+ e^-,J/\psi\to e^+ e^-, t\bar{t}, JF17$ </li>
-						<li>It will be impossible to reproduce the same results, our training on the ID will be partial.</li>
-						<li>Possible to compare the sample we are using with the subsample Lukas was using for test, composed by $Z\to e^+ e^-, JF17$</li>
-					</ul>
-
-				</section>
-				<section style="font-size: 30px;">
-					<h2>Training status</h2>
-					<ul>
-						<li>Currently we have a result for the training without the inclusion of the new variable.</li>
-						<li>The result are promising and some plots for the ID seems to show that the result are ok.</li>
-						<li>Plotting using old code is not immediate, still need some time to adjust all.</li>
-						<li>Perhaps useful to start a training with also the new variable as the setup will remain unchange</li>
-					</ul>
-
-				</section>
-				<section style="font-size: 30px;">
-					<h2>SF study $\to$ PERSONAL OPINION</h2>
-					<ul>
-						<li>The SF evaluation is effectively part of the QT sum up $\to$ for me is fine to proceed!</li>
-						<li>DNN use seems not a priority for CF right now, perhaps never will, do not want to start an issue.</li>
-						<li style="color:red">In case we move on SF evaluation the DNN retrain will immediately stop.</li>
-						<li style="color:red">After SF evaluation, if we agree on that I want to ask for the immediate conclusion.</li>
-					</ul>
-
+				<section>
+					<section style="font-size: 30px;" id="fragments">
+						<h2>Status on generation</h2>
+						<ul>
+							<li>Focus on analysing the last generation $H\to\tau^+\tau^-,\;H\to W^+W^-$</li>
+							<li>The normalization used for the sample is now fixed.</li>
+							<li>Check on cuts and selection underway, doubt on the offline trigger $p_T$ cuts and object definition</li>
+						</ul>
+							<div class="r-stack">
+								<p class="fragment fade-out" data-fragment-index="1">Current results:</p>
+								<p class="fragment fade-out current-visible" data-fragment-index="1">Cuts now applied $2\ell SS$:</p>
+								<p class="fragment fade-out current-visible" data-fragment-index="2">Cuts now applied $3\ell$:</p>
+							</div>
+						
+						<div class="r-stack">
+						<table class="fragment fade-out" data-fragment-index="1">
+							<tr>
+								<td>Channel</td>
+								<td>ONt. 80 $fb^{-1}$</td>
+								<td>NNt. 80 $fb^{-1}$</td>
+								<td>NNt. 139 $fb^{-1}$</td>
+								<td>Gn. 139 $fb^{-1}$</td>
+							</tr>
+							
+							<tr>
+								<td>$3\ell$</td>
+								<td>$50.713$</td>
+								<td>$53.044$</td>
+								<td>$91.857$</td>
+								<td>$\sim 63$</td>
+							</tr>
+							<tr>
+								<td>$2\ell$SS</td>
+								<td>$94.984$</td>
+								<td>$105.436$</td>
+								<td>$181.457$</td>
+								<td>$\sim 174$</td>
+							</tr>
+						</table>
+						<ul class="fragment fade-out current-visible" data-fragment-index="1">
+							<li>At least 1 Bjets</li>
+							<li>At least 2 High energetic Jets</li>
+							<li>Leptons pt above 20 GeV</li>
+							<li>Two lepton event</li>
+							<li>Same sign leptons</li>
+						</ul>
+						<ul class="fragment fade-out current-visible" data-fragment-index="2">
+							<li>Three lepton event,</li>
+							<li>No Tau hadronic decays,</li>
+							<li>Selected Jet pt above 25 GeV,</li>
+							<li>At least 2 jets.</li>
+							<li>At least one lepton couple</li>
+							<li>Leptons pt above 15 GeV</li>
+						</ul>
+					</div>
+						</section> 
+							<section id="fragments">
+							<h2>Fragments</h2>
+							<p>Hit the next arrow...</p>
+							<p class="fragment">... to step through ...</p>
+							<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+	
+							<aside class="notes">
+								This slide has fragments which are also stepped through in the notes window.
+							</aside>
+						</section>
+						<section>
+							<h2>Fragment Styles</h2>
+							<p>There's different types of fragments, like:</p>
+							<p class="fragment grow">grow</p>
+							<p class="fragment shrink">shrink</p>
+							<p class="fragment fade-out">fade-out</p>
+							<p>
+								<span style="display: inline-block;" class="fragment fade-right">fade-right, </span>
+								<span style="display: inline-block;" class="fragment fade-up">up, </span>
+								<span style="display: inline-block;" class="fragment fade-down">down, </span>
+								<span style="display: inline-block;" class="fragment fade-left">left</span>
+							</p>
+							<p class="fragment fade-in-then-out">fade-in-then-out</p>
+							<p class="fragment fade-in-then-semi-out">fade-in-then-semi-out</p>
+							<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+						</section>
+					</section>
 				</section>
 				<section>
 					<section data-auto-animate style="font-size: 30px;" id="fragments"> 
