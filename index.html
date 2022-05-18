@@ -55,10 +55,11 @@
 						<p style="font-size: 18px; margin-top: -40px;">11 - 05 - 2021</p>
 				</section>
 				<section style="font-size: 30px;" >
-					<h2>Status on generation</h2>
+					<h2>Generation summary</h2>
 					<ul>
+						<li>The $ttH$ sample we are using was done with MadGraph5_aMC@NLO and with Delphes to simulate the detector.</li>
 						<li>Focus on generation: $H\to\tau^+\tau^-,\;H\to W^+W^-$.</li>
-						<li> Current generation with 140000 events with the following decay list:</li>
+						<li>Current generation with 140000 events with the following decay list:</li>
 						<ul>
 							<li>$H\to\tau^+\tau^-$,</li>
 							<li> $H\to W^+W^-\to \ell^+ \ell^- \nu_{\ell} \bar{\nu}_{\ell}$,</li>
@@ -67,42 +68,38 @@
 						</ul>
 					</ul>
 						<div>
-							<p> <b>Checking the yield agains the ATLAS one.</b></p>
+							<p> <b>Checking the yield against the ATLAS one.</b></p>
 						</div>
 					
 
 			</section>
 				<section style="font-size: 30px;" >
-						<h2>Status on generation</h2>
+						<h2 style="font-size: 35px;">Yield comparison between the MG/Delphes generated samples and the Atlas samples </h2>
 						<ul>
-							<li>The normalization used for the sample hs been checked with the BR and cross-section information.</li>
-							<li>Check on cuts and selection underway, Compared to the two frameworks.</li>
+							<li>The normalization used for the sample has been checked using the information from the PDG and $H, W$ branching ratio.</li>
+							<li>We have tried to mimic the ATLAS sample cuts to understand if it was feasible to obtain comparable yields and distribution from our generation, the current list of cuts is shown in the next slide.</li>
 						</ul>
 							<div>
 								<p> <b>Current comparison between ATLAS sample with all the cuts applied and our sample with the one shown below</b>:</p>
 							</div>
 						
 						<div>
-							<table>
+							<table style="font-size: 25px;" >
 								<tr>
 									<td>Channel</td>
-									<td>ONt. 80 $fb^{-1}$</td>
-									<td>NNt. 80 $fb^{-1}$</td>
-									<td>NNt. 139 $fb^{-1}$</td>
-									<td>Gn. 139 $fb^{-1}$</td>
+									<td>ATLAS yiels 139 $fb^{-1}$</td>
+									<td>MADGRAPH yiels 139 $fb^{-1}$</td>
 								</tr>
 								
 								<tr>
 									<td>$3\ell$</td>
-									<td>$50.713$</td>
-									<td>$53.044$</td>
+
 									<td>$91.857$</td>
-									<td>$\sim 63$<span style="color:red"> -30%?</span></td>
+									<td>$\sim 63$<span style="color:red"> -30%? (UNCHECKED)</span></td>
 								</tr>
 								<tr>
 									<td>$2\ell$SS</td>
-									<td>$94.984$</td>
-									<td>$105.436$</td>
+
 									<td>$181.457$</td>
 									<td>$\sim 140$<span style="color:red"> -30%?</span></td>
 								</tr>
@@ -130,12 +127,10 @@
 									<td>All</td>
 									<td>PassTrigger</td>
 									<td>2LSSCheck</td>
-									<td>2TightLepton</td>
-									<td>2LSSPreselection</td>
+									<td>2LeptonEvent</td>
 									<td>OneBJet</td>
 									<td>FourJet</td>
-									<td>JetSelection</td>
-									<td>NoHadronDecay</td>
+									<td>NoTauHadronDecay</td>
 								</tr>
 								<tr>
 
@@ -143,9 +138,7 @@
 									<td>$1014$</td>
 									<td>$351$</td>
 									<td>$255$</td>
-									<td>$255$</td>
 									<td>$216$</td>
-									<td>$178$</td>
 									<td>$178$</td>
 									<td>$140$</td>
 								</tr>
@@ -154,14 +147,33 @@
 				</section>
 
 				<section>
-					<p><b>Comparison $2\ell SS$ at NoHadronDecay</b>:</p>
+					<p><b>Comparison $2\ell SS$ at NoTauHadronDecay</b>:</p>
 						<div style="margin-top: -35px;">
 							<img src="figures/Plots/lep_Eta_0_TauPreselection_0.5-1.png" alt="reveal.js logo" style="height: 350px; margin-left: -135px; margin-right: -75px"  background: transparent;" class="demo-logo">
 							<img src="figures/Plots/lep_Eta_1_TauPreselection_0.5-1.png" alt="reveal.js logo" style="height: 350px;  background: transparent;" class="demo-logo">
 							<img src="figures/Plots/lep_Pt0_TauPreselection_20-1.png" alt="reveal.js logo" style="height: 350px; margin-top: -65px; margin-left: -135px; margin-right: -190px  background: transparent;" class="demo-logo">
 							<img src="figures/Plots/lep_Pt1_TauPreselection_20-1.png" alt="reveal.js logo" style="height: 350px; margin-top: -65px; margin-left: -85px; background: transparent;" class="demo-logo">
 						</div>
-						<p style="font-size: 18px; margin-top: -40px;">11 - 05 - 2021</p>
+						<p style="font-size: 18px; margin-top: -40px;"></p>
+				</section>
+
+				<section>
+					<p><b>Comparison $2\ell SS$ at NoTauHadronDecay</b>:</p>
+						<div style="margin-top: -35px;">
+							<img src="figures/Plots/DeltaR_JL0B.png" alt="reveal.js logo" style="height: 350px; margin-left: -15px; margin-right: -15px"  background: transparent;" class="demo-logo">
+							<img src="figures/Plots/DeltaR_JL1B.png" alt="reveal.js logo" style="height: 350px;  background: transparent;" class="demo-logo">
+							<img src="figures/Plots/NJET.png" alt="reveal.js logo" style="height: 350px; margin-top: -65px; margin-left: -15px; margin-right: -19px  background: transparent;" class="demo-logo">
+						</div>
+						<p style="font-size: 18px; margin-top: -40px;"></p>
+				</section>
+
+				<section>
+					<p><b>Comparison $2\ell SS$ at NoTauHadronDecay<br> Including DeltaR cut</b>:</p>
+						<div style="margin-top: -35px;">
+							<img src="figures/Plots/DeltaR_JL0A.png" alt="reveal.js logo" style="height: 350px; margin-left: 13px; margin-right: 15px"  background: transparent;" class="demo-logo">
+							<img src="figures/Plots/DeltaR_JL1A.png" alt="reveal.js logo" style="height: 350px;  background: transparent;" class="demo-logo">
+						</div>
+						<p style="font-size: 18px; margin-top: -40px;"></p>
 				</section>
 
 				
